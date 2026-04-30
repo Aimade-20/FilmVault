@@ -194,9 +194,12 @@ body {
   padding: 30px;
   border-radius: 10px;
   background-color: #ddd;
+  display: flex;
+    align-items: center;
+    gap: 30px;
 }
-.Detail-holder button{
-
+.Detail-holder img{
+  width: 250px;
 }
 .closeCarde{
   border-radius: 5px;

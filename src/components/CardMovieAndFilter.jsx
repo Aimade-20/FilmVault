@@ -9,7 +9,11 @@ function CardMovieAndFilter() {
 
   const [selectedGenre, setSelectedGenre] = useState("All");
 
+  
+
   const genres = ["All", ...new Set(movies.map((movie) => movie.genre))];
+  console.log(genres);
+  
 
   const filteredMovies =
     selectedGenre === "All"
