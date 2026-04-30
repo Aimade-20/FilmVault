@@ -1,54 +1,39 @@
-import { useState } from 'react';
-import { movies } from '../data'
-import '../index.css'
-import Filter from './Filter-film';
+import { useState } from "react";
+import Details from "./DetailsMovie";
 
 function MovieCard({ movie }) {
-  console.log(movie);
+  const [isOpen, setIsOpen] = useState(false);
+  // console.log(isOpen);
+
+  // console.log(movie);
+  // function openDetail() {
+  //   document.getElementById(`detail-${movie.id}`).display = "flex"
+  // }
+
+  const closePopupDetails = () => {
+    typeof setIsOpen;
+    setIsOpen(false);
+  };
+
+  const testIsOpen = () => {
+    setIsOpen(true);
+    console.log("trying this test" + isOpen);
+  };
 
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={() => setIsOpen(true)}>
       <img src={movie.image} alt={movie.title} />
       <div className="movie-info">
         <p>Title: {movie.title}</p>
         <p>genre : {movie.genre}</p>
-        <p>Note : {Array(movie.rating)
-          .fill("⭐")
-          .map((star, index) => (
-            <span key={index}>{star}</span>
-          ))}</p>
+        <p>
+          Note : {"⭐".repeat(movie.rating)}
+          // {"☆".repeat(5 - movie.rating)}
+        </p>
       </div>
+      {isOpen && <Details movie={movie} closePopup={testIsOpen} />}
     </div>
-
-  )
+  );
 }
 
-function CardMovieAndFilter() {
-  console.log(movies);
-
-   const [selectedGenre, setSelectedGenre] = useState("All")
-
-  const genres = ["All", ...new Set(movies.map((movie) => movie.genre))]
-
-  const filteredMovies =
-    selectedGenre === "All"
-      ? movies
-      : movies.filter((movie) => movie.genre === selectedGenre)
-
-  return (
-    <div className='cards-holder'>
-      <h2 >Movies List</h2>
-      <Filter
-        genres={genres}
-        selectedGenre={selectedGenre}
-        setSelectedGenre={setSelectedGenre}
-      />
-      <div className='movies-grid'>
-         {filteredMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-    </div>
-  )
-}
-export default CardMovieAndFilter
+export default MovieCard;
