@@ -3,7 +3,7 @@
 function Details({ movie, closePopup }) {
   const close = () => {
     closePopup();
-    console.log("close");
+    // console.log("close");
   };
 
   return (

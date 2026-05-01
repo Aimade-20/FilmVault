@@ -8,7 +8,6 @@ export const movies = [
     director: "Christopher Nolan",
     actors: ["Leonardo DiCaprio", "Tom Hardy"],
     image: "https://www.hollywoodinsider.com/wp-content/uploads/2020/01/Hollywood-Insider-Feature-Inception-Greatest-Movie-Of-The-Decade-Leonardo-Dicaprio-Tom-Hardy-Marion-Cotillard-Joseph-Gordon-Levitt-Michael-Caine-Christopher-Nolan-Ken-Wantanabe-Ellen-Paige.jpg",
-    trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
     rating: 5
   },
   {
@@ -20,7 +19,6 @@ export const movies = [
     director: "Sam Raimi",
     actors: ["Tobey Maguire", "Kirsten Dunst"],
     image: "https://fr.web.img2.acsta.net/pictures/23/05/11/10/00/1986933.jpg",
-    trailer: "https://www.youtube.com/embed/t06RUxPbp_c",
     rating: 4
   },
   {
@@ -45,7 +43,7 @@ export const movies = [
     actors: ["Robert Downey Jr.", "Chris Evans"],
     image: "https://fr.web.img2.acsta.net/pictures/19/04/04/09/04/0472053.jpg",
     trailer: "https://www.youtube.com/embed/TcMBFSGVi1c",
-    rating: 4
+    rating: 4 
   },
   {
     id: 5,

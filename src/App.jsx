@@ -4,6 +4,8 @@ import { movies as fakeMovies } from "./data";
 import Navbar from "./components/Navbar.jsx";
 import CardMovieAndFilter from "./components/CardMovieAndFilter.jsx";
 import Hero from "./components/TopMovie.jsx";
+// import Top3Movies from "./components/Top3.jsx";
+
 
 function App() {
   const [movies] = useState(fakeMovies);
@@ -18,7 +20,6 @@ function App() {
         <Navbar />
         <Hero movie={topMovie} />
       </div>
-
       <div className="movies-list">
         <CardMovieAndFilter />
       </div>

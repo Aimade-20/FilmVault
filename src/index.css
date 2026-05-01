@@ -70,6 +70,7 @@ body {
 .cards-holder h2 {
     color: white;
     font-size: 25px;
+    margin: 5px;
     font-weight: bold;
 }
 
@@ -82,9 +83,17 @@ body {
 }
 
 .movie-card {
-  background: white;
+  background: #ffffff00;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   border-radius: 0 0 20px 20px;
+  flex: 1;           
+  max-width: 300px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.movie-card:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
 .movie-card img {
@@ -97,9 +106,7 @@ body {
 .movie-info {
   padding: 10px;
   font-size: 13px;
-
-
-  color: #333;          
+  color: #BFC6C4;          
   font-weight: 600;      
   font-family: Arial;     
   text-transform: capitalize; 
@@ -180,15 +187,16 @@ body {
 .Details-movie{
   position: fixed;
   left: 0;
-  top:0;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
-  /* border-radius: 10px; */
+  background: rgba(0, 0, 0, 0.6); /* ← chfaf */
+  backdrop-filter: blur(5px);      /* ← blur */
+  -webkit-backdrop-filter: blur(5px);
   z-index: 10;
   display: flex;
-   justify-content: center;
-   align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .Detail-holder{
   padding: 30px;
@@ -210,4 +218,31 @@ body {
 }
 .hidden{
   display: none ;
+}
+.top3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  background-color: #000;
+  overflow-x: auto;
+  padding: 0px;
+}
+.filter-section{
+  position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%);
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 11px 20px #0c2b4536;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; 
+    /* opacity: 0; */
+    transition: .1s;
+     visibility: hidden; 
+     z-index: -99; 
+     /* height: 0; */
 }
