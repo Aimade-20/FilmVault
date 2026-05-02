@@ -229,20 +229,31 @@ body {
   overflow-x: auto;
   padding: 0px;
 }
-.filter-section{
-  position: absolute;
-    top: 100%;
-    right: 50%;
+/* .select-Style{
     transform: translate(50%);
     width: 180px;
-    text-align: center;
     box-shadow: 0 11px 20px #0c2b4536;
     background: #fff;
-    border-radius: 8px;
-    overflow: hidden; 
-    /* opacity: 0; */
+    border-radius: 8px;; 
     transition: .1s;
-     visibility: hidden; 
-     z-index: -99; 
-     /* height: 0; */
+} */
+.filter-section select {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  background: #eaeaea;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+.filter-section select:hover {
+  background: #ddd;
+  border-color: #999;
+}
+.filter-section select:focus {
+  outline: none;
+  border-color: #4a6cf7;
+  box-shadow: 0 0 6px rgba(74, 108, 247, 0.4);
 }
