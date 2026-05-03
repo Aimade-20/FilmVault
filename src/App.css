@@ -182,3 +182,25 @@
     border-right-color: var(--border);
   }
 }
+
+
+.filter-section h3 {
+  color: #fff;
+}
+.filter-section {
+  margin: 12px 12px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter-section h2 {
+  font-size: 18px;
+}
+
+.filter-section select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

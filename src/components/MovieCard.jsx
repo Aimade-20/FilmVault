@@ -1,38 +1,29 @@
-import { movies } from '../data'
-import '../index.css'
+import { useState } from "react";
+import Details from "./DetailsMovie";
 
-  function MovieCard({movie}) {
-  console.log(movie);
-  
-    return(
-      <div className="movie-card">
+function MovieCard({ movie }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closePopupDetails = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <div className="movie-card" onClick={() => setIsOpen(true)}>
         <img src={movie.image} alt={movie.title} />
         <div className="movie-info">
           <p>Title: {movie.title}</p>
           <p>genre : {movie.genre}</p>
-          <p>Note : {Array(movie.rating)
-          .fill("⭐")
-          .map((star, index) => (
-            <span key={index}>{star}</span>
-          ))}</p> 
+          <p>
+            Note : {"⭐".repeat(movie.rating)}
+            {"☆".repeat(5 - movie.rating)}
+          </p>
         </div>
       </div>
-
-    )
+      {isOpen && <Details movie={movie} closePopup={closePopupDetails} />}
+    </>
+  );
 }
 
- function CardMovie (){
-  console.log(movies);
-  
-  return(
-    <div className='cards-holder'>
-      <h2>Movies List</h2>
-       <div className='movies-grid'>
-         {movies.map((movie) => (
-          <MovieCard key ={movie.id} movie ={movie} />
-        ))}
-       </div>
-    </div>
-  )
-}
-export default CardMovie
+export default MovieCard;
